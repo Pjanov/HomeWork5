@@ -1,5 +1,6 @@
 package ru.pjanov;
 
+
 public class Main {
     public static void main(String[] args) {
 
@@ -7,7 +8,7 @@ public class Main {
 
         td.phoneNumbers.add("123");
         td.phoneNumbers.add("456");
-        td.phoneBook.putIfAbsent("Andrey",td.phoneNumbers);
+        td.phoneBook.putIfAbsent("Ivanov",td.phoneNumbers);
 
         System.out.println(td.phoneBook);
 
