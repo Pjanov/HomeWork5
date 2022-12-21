@@ -1,16 +1,22 @@
 package ru.pjanov;
 
 
+import java.util.*;
+
 public class Main {
+    static Map<String, List<String>> phoneNote = new HashMap<>();
+
     public static void main(String[] args) {
 
-        TelephoneDirectory td = new TelephoneDirectory();
+        // создать запись в телефонном справочнике
+        phoneNote.putIfAbsent("Ivanov", Arrays.asList("123", "89651234567"));
+        phoneNote.putIfAbsent("Smirnov", Arrays.asList("456", "89658901234"));
+        phoneNote.putIfAbsent("Sidorov", Arrays.asList("789", "89655678901"));
+        System.out.println(phoneNote);
 
-        td.phoneNumbers.add("123");
-        td.phoneNumbers.add("456");
-        td.phoneBook.putIfAbsent("Ivanov",td.phoneNumbers);
-
-        System.out.println(td.phoneBook);
-
+        // получить по фамилии номера телефонов
+        System.out.println(phoneNote.get("Ivanov"));
+        System.out.println(phoneNote.get("Smirnov"));
+        System.out.println(phoneNote.get("Sidorov"));
     }
 }
